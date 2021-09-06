@@ -1,0 +1,413 @@
+*{
+    box-sizing: border-box;
+}
+
+*::before
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* обнуляем стили */
+.list-reset{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.btn-reser{
+    padding: 0;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* добавлям картинку на задний фон */
+.hero{
+    background-image: url("../img/Bitmap2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 188px;
+}
+
+/*разводит в шапке лого и бургер к раззным сторонам*/
+.header-conteiner{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* добавляем шапку на картинку */
+.header{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+/* объявляем размер контейнеру и ставим его по центру */
+.conteiner{
+    /* для адаптива указываем макс-ширину на 30 больше из-за паддингов */
+    max-width: 1140px; 
+    margin: 0 auto;
+    align-items: center;
+    /* для адаптива указываем паддинг и вычитаем его сумму из макс-ширины */
+    padding: 0 15px;
+}
+
+/*делает круг для бургера*/
+.burger{
+    /* две перемнные */
+    --ofsat-horizontal: 11px;
+    --ofsat-vertical: 14px;
+    /* необходимо установить позишн релатив а в детях абсолют */
+    position: relative;
+    /* паддинг с помощью переменных */
+    padding: var(--ofsat-horizontal) var(--ofsat-vertical);
+    width: 40px;
+    height: 40px;
+    background-color: #f5f6f7;
+    border-radius: 100%;
+}
+
+/* делаем первую черную полосочку в бургере */
+.burger-line{
+    position: absolute;
+    left: 50%;
+    top: var(--ofsat-vertical);
+    display: inline-block;
+    /* ширина с помощью переменных */
+    width: calc(100% - (var(--ofsat-horizontal)*2));
+    height: 2px;
+    background-color: #000;
+    /* посоветовали просто запомнить чтобы стоял по центру  */
+    transform: translateX(-50%);
+}
+
+/* назначаем вторую полосочку в бургере*/
+.burger-line:nth-child(2){
+    top: calc(var(--ofsat-vertical) + 6px);
+}
+
+/* назначаем 3ью полосочку в бургере */
+.burger-line:nth-child(3){
+    top: calc(var(--ofsat-vertical) + 12px);
+}
+
+.hero_content{
+    max-width: 616px;
+    padding-bottom: 221px;
+}
+
+/* назначаем стили текста */
+.hero-subtitle{   
+    display: inline-block;
+    margin-bottom: 22px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #fff;
+}
+
+.hero-title{
+    margin: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 74px;
+    color: #fff;
+}
+
+.hero-descr{
+    margin: 0;
+    margin-bottom: 45px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;   
+    color: #fff;
+}
+
+
+/*  */
+.link{
+    display: inline-flex;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;  
+    color: #d4d6d4;
+    text-decoration: none;
+    transition: color, 0.1s ease-in-out;
+}
+
+.link svg{
+    width: 12px;
+    height: 12px;
+    fill:currentColor;
+    transform: translateY(5px);
+}
+
+.link span{
+    text-indent: 10px;
+    border-bottom: 1px solid currentColor;
+}
+
+.link:hover{
+    color: #ffd723;
+}
+
+.hero-link{
+    color:#ffd723;
+}
+
+.site-title{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 46px;
+    color: #4D533C;
+}
+
+.services{
+    margin-bottom: -180px;
+    padding-top: 150px;
+    margin-bottom: 150px;
+}
+
+.services-title{
+    margin-top: 140px;
+    margin-bottom: 60px;
+    max-width: 606px;
+}
+
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    padding: 27px 42px 36px 30px;
+
+}
+
+.services-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle{
+    margin: 0;
+    margin-bottom: 20px;
+    min-width: 183px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 34px;
+    text-transform: uppercase;
+    color: #4D533C;
+}
+
+.services-descr{
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color: rgba(33, 56, 66, 0.6);
+}
+
+.services-link{
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.get{
+    position: relative;
+    top: 180px;
+    background-color: #fafafa;
+    width: 88%;
+    padding: 70px 0;
+    box-shadow: 50px 130px 100px rgba(0, 0, 0, 0.145947);
+}
+
+.get-title{
+    margin: 0;
+    margin-bottom: 50px;
+    max-width: 822px;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 74px;
+    color: #4D533C;
+}
+
+.get-link link{
+    text-transform: uppercase;
+}
+
+.footer{
+    padding-top: 300px;
+    color: #fff;
+    background-image: url("../img/Bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer_top{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 52px;
+    border-bottom: 1px solid #5d6544;
+}
+
+.footer-top-item:not(:last-child){
+    margin-right: 128px;
+}
+
+.footer-top-text{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+    color: #B6C197;
+}
+
+.footer-top-value{
+    display: inline-block;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-middle{
+    --grid-gap:70px;
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(4,1fr);
+    padding: 60px 0;
+    border-bottom: 1px solid #5d6544;
+}
+
+.footer-column{
+
+}
+
+.footer-title{
+    margin: 0;
+    margin-bottom: 21px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.footer-list{
+
+}
+
+.footer-item{
+
+}
+
+.footer-link{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 40px;
+    color: #B6C197;
+    text-decoration: none;
+}
+
+.footer-text{
+    margin: 0;
+    margin-bottom: 23px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #B6C197;
+}
+
+
+.footer-mail{
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 38px;
+    color: #FFFFFF;
+}
+
+.footer-column:last-child::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (var(--grid-gap)));
+    width: 1px;
+    height: 100%;
+    background-color: #5D6544;
+}
+
+.social-link{
+  display: block;
+  border-radius: 100%;
+  width: 33px;
+  height: 33px;
+  background-color: #444a34;
+  background-position: center;
+  background-repeat: no-repeat;  
+  background-size: 18px auto;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+}
+
+.social-item:not(:last-child) {
+    margin-right: 11px;
+}
+
+.social-link:hover{
+    background-color: #ffd723;
+}
+
+.social-link-fb{
+    background-image: url("../icon/facebook.svg");
+}
+
+.social-link-tw{
+    background-image: url("../icon/twitter.svg");
+}
+
+.social-link-g{
+    background-image: url("../icon/google-plus.svg");
+}
+
+.social-link-in{
+    background-image: url("../icon/linkedin.svg");
+}
+
+.copy{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #B5C096;
+}
+
+.footer-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+}
